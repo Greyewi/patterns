@@ -35,7 +35,9 @@ const doge = animalFactory.createAnimal({
   animalType: 'dog',
   name: 'Doge'
 })
+
 const snowball = animalFactory.createAnimal({name: 'Snowball'})
+
 console.log(doge instanceof Dog)     // true
 console.log(doge)                    // выводит doge как cat объект
 console.log(snowball instanceof Cat) // true

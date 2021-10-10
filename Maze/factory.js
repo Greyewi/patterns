@@ -130,23 +130,33 @@ class EnchantedMazeFactory extends MazeFactory {
 class BombedRoom extends Room {
   enter() {
     super.enter();
-    console.log('THIS is a Enchanted room!');
+    console.log('THIS is a Bombed room!');
   }
 }
 
 class BombedWall extends Wall {
   enter() {
-    console.log('You run into a Enchanted wall.  It makes you feel Enchanted');
+    console.log('You run into a Bombed wall.  It makes you feel Bombed');
+  }
+}
+
+class BombedDoor extends Wall {
+  enter() {
+    console.log('You run into a Bombed wall.  It makes you feel Bombed');
   }
 }
 
 class BombedMazeFactory extends MazeFactory {
   makeRoom(id) {
-    return new EnchantedRoom(id);
+    return new BombedRoom(id);
   }
 
   makeWall() {
-    return new EnchantedWall();
+    return new BombedWall();
+  }
+
+  makeDoor() {
+    return new BombedDoor();
   }
 }
 
