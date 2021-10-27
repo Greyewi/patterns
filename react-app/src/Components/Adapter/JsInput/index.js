@@ -26,7 +26,6 @@ const StandardDateInput = function(defaultDate) {
   }
 }
 
-
 const StandardDateInputAdapter = function(dateInput) {
   this.dateInput = dateInput
 
@@ -39,13 +38,8 @@ const StandardDateInputAdapter = function(dateInput) {
   }
 }
 
-const DateInput = function({format}){
-  let myDateInput
-  if(format === 'iso') {
-    myDateInput = new ISODateInput('2020-05-05T16:25:40-06:00')
-  } else {
-    myDateInput = new StandardDateInputAdapter(new StandardDateInput('2020-05-05T16:25:40-06:00'))
-  }
+const DateInput = function(){
+  const myDateInput = new StandardDateInputAdapter(new StandardDateInput('2020-05-05T16:25:40-06:00'))
 
   return <input type="date" onChange={myDateInput.onChangeISO} value={moment(myDateInput.getDate(), ISO_FORMAT).format('YYYY-MM-DD')}/>
 }
