@@ -1,15 +1,10 @@
 import './App.css';
-
-import Typography from './Components/TypographyProto'
-import DateInput from './Components/JsInputAdapter'
-
+import Inputs from './Components/Decorator/Input/index'
 function App() {
 
   return (
     <div className="App">
-      <Typography fontFamily="monospace" fontSize='20px'>This is standard typography text</Typography>
-      <DateInput format={'iso'}/>
-      <DateInput/>
+      <Inputs/>
     </div>
   );
 }
